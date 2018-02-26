@@ -1,0 +1,357 @@
+---
+title: "Pilot Data - Part II"
+author: "Marguerite CAMERON"
+date: "26 février 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part I
+
+This first section contains the data and graphs used in the original project.
+
+## Intro 
+
+These are dataframes containing the name of the participant and a small sample of the VOT measurements taken from the pilot experiment. 
+VOT measurements were taken from recordings of spontaneous speech, and are of word-initial [p], [t], or [k].  There are 10 VOT samples in each category (explained below).  The words selected to comprise the data for this project are the first 10 with easy and reliable VOT measurements in the folder of audio clips from the original recording.  The 10 VOT measurements in each category are, then, quasi-random.
+
+VOT measurements (in ms) for each participant are taken first from French words in a monolingual French context and second from English codeswitch words in a predominantly French conversational context.
+
+The first participant, F, is a native francophone bilingual in English.  Her data frame will contain two categories of VOT measurements.  The first, which will be named "L1", is of French words in a monolingual context.  The second, which will be named "L1toL2", is of English words during a predominantly French conversation.  
+
+The second participant, P, is a native anglophone bilingual in French.  Her data frame will also contain two categories of VOT measurements.  The first, which will be named "L2", is of French words in a monolingual context.  The second, which will be named "L2toL1", is of English words during a predominantly French conversation.
+
+The analyses that follow are intended to provide a comparison of two speakers of different native languages in their average French VOTs and their average English VOTs in instances of French to English codeswitching.
+Using this sample data, predictions will be made for what to expect of more data from the same speakers or of a larger, hypothetical data set.
+
+
+## Data frames for each participant
+
+Data frames include :
+The name of the participant, the phoneme whose VOT was measured, and the VOT of the corresponding phoneme.
+
+```{r}
+# Participant F
+
+participant_F <- c('F')
+L1phone <- c('k', 'k', 'k', 'p', 'p', 'p', 'p', 't', 'p', 'p')
+L1 <- c(24, 14, 25, 14, 22, 14, 13, 37, 13, 21)
+L1toL2phone <- c('k','k','k','k','k', 'p', 'p', 'k','k', 't')
+L1toL2 <- c(50, 30, 29, 44, 48, 45, 65, 30, 42, 54)
+
+F.data <- data.frame(participant_F, L1phone, L1, L1toL2phone, L1toL2 )
+
+summary(F.data)
+
+print(F.data)
+```
+
+
+```{r}
+# Participant P
+
+participant_P <- c('P')
+L2phone <- c('p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 't')
+L2 <- c(9, 13, 18, 11, 11, 16, 10, 27, 10, 19)
+L2toL1phone <- c('p', 't', 't', 'p', 'p', 'p', 'k', 't', 'p', 'p')
+L2toL1 <- c(49, 65, 67, 23, 17, 31, 51, 49, 59, 36)
+
+P.data <- data.frame(participant_P, L2phone, L2, L2toL1phone, L2toL1)
+
+summary(P.data)
+
+print(P.data)
+```
+
+
+## Boxplots and Histograms for Original Data of Each Participant
+
+The boxplots provide a basic visual comparison of the original data for each participant.  Though looking at the tables, there are clearly differences between their respective VOTs in the two conditions, a visual representation is useful for quickly comparing the two.
+
+```{r}
+# Boxplot for Participant F
+# shows basic comparison between VOT for French monolingual context and for English words during a codeswitch
+
+boxplot(L1, L1toL2)
+
+# Histogram for L1 VOTs for Participant F
+
+hist(F.data$L1, main="French VOTs of Particpant F", xlab = "VOT (ms)")
+
+# Histogram for L1toL2 VOTs for Participant F
+
+hist(F.data$L1toL2, main="English Codeswitch VOTs of Particpant F", xlab = "VOT (ms)")
+
+```
+
+```{r}
+
+# Boxplot for Participant P
+# shows basic comparison between VOT for French monolingual context and for English words during a codeswitch
+
+boxplot(L2, L2toL1)
+
+# Histogram for L2 VOTs for Participant P
+
+hist(P.data$L2, main="French VOTs of Particpant F", xlab = "VOT (ms)")
+
+# Histogram for L2toL1 VOTs for Participant P
+
+hist(P.data$L2toL1, main="English Codeswitch VOTs of Particpant P", xlab = "VOT (ms)")
+```
+
+
+
+
+## Initial comparison of the two speakers, based on the original sample data 
+
+Based on the original sample data, we can make some rudimentary observations about the two speakers' articulatory patterns.
+
+Unexpectedly, Participant P has displayed a shorter VOT in a French monolingual context, on average.  This is surprising for two reasons : as an anglophone, Participant P would be predicted to have longer VOT than a francophone native, and -- though this has not been factored in to the present analysis -- Participant P has a generally slower speech rate than that of Participant F.
+That said, the difference in mean VOT in French monolingual contexts is quite small within the original sample size -- a mean of 19.7 for Participant F and of 14.4 for Participant P.  
+
+There is a smaller difference between the two speakers' mean VOTs in the French to English codeswitching environment.  
+
+From the boxplots, it can be noted that, for both speakers, there is greater variety in the measured VOTs in the codeswitching condition, especially with Participant P.  Whereas in the French monolingual condition, both speakers' VOTs are more tightly grouped around the mean.  
+
+
+## Expansion of the dataset by resampling
+
+Using a basic bootstrap function, more datapoints will be generated to allow for comparison between the two speakers.
+
+
+```{r}
+
+library(boot)
+
+participant_F <- c('F')
+L1phone <- c('k', 'k', 'k', 'p', 'p', 'p', 'p', 't', 'p', 'p')
+L1 <- c(24, 14, 25, 14, 22, 14, 13, 37, 13, 21)
+L1toL2phone <- c('k','k','k','k','k', 'p', 'p', 'k','k', 't')
+L1toL2 <- c(50, 30, 29, 44, 48, 45, 65, 30, 42, 54)
+
+F.data <- data.frame(participant_F, L1phone, L1, L1toL2phone, L1toL2 )
+
+  
+F_L1_boot <- function(F.data,L1) {
+n <- 10
+return(sum(F.data[L1[1:n]])/n)}
+
+boot_F_L1 <- boot(data=F.data, statistic=F_L1_boot, R=100)
+
+
+
+```
+
+```{r}
+library(purrr)
+permute(F.data, 100, L1)
+```
+
+```{r}
+resample_F_L1 <- function(F.data, L1) {
+[[var]] <- # YOUR CODE HERE: generate a shuffled version of d[[var]]
+return(d)
+}
+```
+
+##  Part II
+
+This is the follow up, using some additional data 
+
+
+## data 
+
+The data is from the same two speakers
+Speaker F is a native french speaker. Their data set includes L1 baseline VOT, L2 baseline VOT, and L1 to L2 codeswitch VOT.  None of the codeswitch tokens of L2 to L1 were usable due to noise during recording and so there are no data points in that category for this speaker.
+Speaker P is a native english speaker.  Their data set includes L1 baseline VOT, L2 baseline VOT, L1 to L2 codeswitch VOT, and L2 to L1 codeswitch VOT.
+
+```{r}
+speakerF_data <- read.csv("speakerF")
+```
+
+## plots with additional data 
+
+```{r}
+
+# Participant F
+
+participant_F <- c('F')
+L1phone <- c('k', 'k', 'k', 'p', 'p', 'p', 'p', 't', 'p', 'p')
+L1 <- c(24, 14, 25, 14, 22, 14, 13, 37, 13, 21)
+L2phone <- c('k', 'p', 'k', 'k', 'k', 'p', 't', 'p', 'p', 't')
+L2 <- c(27, 25, 67, 43, 63, 46, 32, 24, 29, 55)
+L1toL2phone <- c('k','k','k','k','k', 'p', 'p', 'k','k', 't')
+L1toL2 <- c(50, 30, 29, 44, 48, 45, 65, 30, 42, 54)
+
+
+F.data_2 <- data.frame(participant_F, L1phone, L1, L2phone, L2, L1toL2phone, L1toL2)
+
+summary(F.data_2)
+
+print(F.data_2)
+
+
+```
+```{r}
+# Participant P
+
+participant_P <- c('P')
+L1phone <- c('k', 'k', 'p', 'k', 'p', 't', 't', 't', 'p', 't')
+L1 <- c(70, 42, 76, 50, 79, 21, 74, 40, 13, 37)
+L2phone <- c('p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 't')
+L2 <- c(9, 13, 18, 11, 11, 16, 10, 27, 10, 19)
+L1toL2phone <- c('p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'k', 't')
+L1toL2 <- c(12, 11, 9, 17, 8, 12, 6, 18, 35, 14)
+L2toL1phone <- c('p', 't', 't', 'p', 'p', 'p', 'k', 't', 'p', 'p')
+L2toL1 <- c(49, 65, 67, 23, 17, 31, 51, 49, 59, 36)
+
+
+P.data_2 <- data.frame(participant_P, L1phone, L1, L2phone, L2, L1toL2, L1toL2phone, L2toL1phone, L2toL1)
+
+summary(P.data_2)
+
+print(P.data_2)
+```
+
+
+## Box plots and Histograms for Additional Data
+
+
+```{r}
+
+data(F.data_2)
+#Participant F
+
+#Boxplot for French monolingual VOT vs English monolingual VOT
+#show basic comparison between VOT for French monolingual context vs English monolingual context
+
+boxplot(L1, L2, main="French vs English VOT", xlab="Language", ylab="VOT in ms", names=c("French", "English"))
+
+# Boxplot English monolingual VOT vs French to English Codeswitch VOT
+# shows basic comparison between VOT for English monolingual context and for English words during a codeswitch
+
+boxplot(L2, L1toL2, main="English word VOT", xlab="Condition", ylab="VOT in ms", names=c("English Monolingual", "French to English"))
+
+# Histogram for L1 VOTs for Participant F
+
+hist(F.data_2$L1, main="French VOTs of Particpant F", xlab = "VOT (ms)")
+
+# Histogram for L2 VOTs for Participant F
+
+hist(F.data_2$L2, main="English VOTs of Participant F", xlab = "VOT (ms)")
+
+# Histogram for L1toL2 VOTs for Participant F
+
+hist(F.data_2$L1toL2, main="English Codeswitch VOTs of Particpant F", xlab = "VOT (ms)")
+
+```
+
+```{r}
+data(P.data_2)
+#Participant P
+
+#Boxplot for English monolingual VOT vs French monolingual VOT
+#show basic comparison between VOT for English monolingual context vs French monolingual context
+
+boxplot(L1, L2, main="French vs English VOT", xlab="Language", ylab="VOT in ms", names=c("English", "French"))
+
+# Boxplot English monolingual VOT vs French to English Codeswitch VOT
+# shows basic comparison between VOT for English monolingual context and for English words during a codeswitch
+
+boxplot(L1, L2toL1, main="English word VOT", xlab="Condition", ylab="VOT in ms", names=c("English Monolingual", "French to English"))
+
+#Boxplot French monolingual VOT vs English to French codeswitch VOT
+#shows basica comparison between VOT for French monolingual context and for French words during a codeswitch
+
+boxplot(L2, L1toL2, main="French word VOT", xlab="Condition", ylab="VOT in ms", names=c("French Monolingual", "English to French"))
+
+# Histogram for L1 VOTs for Participant P
+
+hist(P.data_2$L1, main="English VOTs of Particpant P", xlab = "VOT (ms)")
+
+# Histogram for L2 VOTs for Participant P
+
+hist(P.data_2$L2, main="French VOTs of Participant P", xlab = "VOT (ms)")
+
+# Histogram for L1toL2 VOTs for Participant P
+
+hist(P.data_2$L1toL2, main="French Codeswitch VOTs of Particpant P", xlab = "VOT (ms)")
+
+# Histogram for L2toL1 VOTs for Participant P
+
+hist(P.data_2$L2toL1, main="English Codeswitch VOTs of Particpant P", xlab = "VOT (ms)")
+
+```
+
+
+## Same plots using .csv files
+
+```{r}
+
+data(speakerF)
+#Participant F
+
+#Boxplot for French monolingual VOT vs English monolingual VOT
+#show basic comparison between VOT for French monolingual context vs English monolingual context
+
+boxplot(L1, L2, main="French vs English VOT", xlab="Language", ylab="VOT in ms", names=c("French", "English"))
+
+# Boxplot English monolingual VOT vs French to English Codeswitch VOT
+# shows basic comparison between VOT for English monolingual context and for English words during a codeswitch
+
+boxplot(L2, L1toL2, main="English word VOT", xlab="Condition", ylab="VOT in ms", names=c("English Monolingual", "French to English"))
+
+# Histogram for L1 VOTs for Participant F
+
+hist(F.data_2$L1, main="French VOTs of Particpant F", xlab = "VOT (ms)")
+
+# Histogram for L2 VOTs for Participant F
+
+hist(F.data_2$L2, main="English VOTs of Participant F", xlab = "VOT (ms)")
+
+# Histogram for L1toL2 VOTs for Participant F
+
+hist(F.data_2$L1toL2, main="English Codeswitch VOTs of Particpant F", xlab = "VOT (ms)")
+
+```
+
+```{r}
+data(speakerP)
+#Participant P
+
+#Boxplot for English monolingual VOT vs French monolingual VOT
+#show basic comparison between VOT for English monolingual context vs French monolingual context
+
+boxplot(L1, L2, main="French vs English VOT", xlab="Language", ylab="VOT in ms", names=c("English", "French"))
+
+# Boxplot English monolingual VOT vs French to English Codeswitch VOT
+# shows basic comparison between VOT for English monolingual context and for English words during a codeswitch
+
+boxplot(L1, L2toL1, main="English word VOT", xlab="Condition", ylab="VOT in ms", names=c("English Monolingual", "French to English"))
+
+#Boxplot French monolingual VOT vs English to French codeswitch VOT
+#shows basica comparison between VOT for French monolingual context and for French words during a codeswitch
+
+boxplot(L2, L1toL2, main="French word VOT", xlab="Condition", ylab="VOT in ms", names=c("French Monolingual", "English to French"))
+
+# Histogram for L1 VOTs for Participant P
+
+hist(P.data_2$L1, main="English VOTs of Particpant P", xlab = "VOT (ms)")
+
+# Histogram for L2 VOTs for Participant P
+
+hist(P.data_2$L2, main="French VOTs of Participant P", xlab = "VOT (ms)")
+
+# Histogram for L1toL2 VOTs for Participant P
+
+hist(P.data_2$L1toL2, main="French Codeswitch VOTs of Particpant P", xlab = "VOT (ms)")
+
+# Histogram for L2toL1 VOTs for Participant P
+
+hist(P.data_2$L2toL1, main="English Codeswitch VOTs of Particpant P", xlab = "VOT (ms)")
+
+```
