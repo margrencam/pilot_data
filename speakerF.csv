@@ -1,0 +1,31 @@
+word,phoneme,VOT,language
+cartes,k,24,L1
+catechisme,k,14,L1
+que,k,25,L1
+paradis,p ,14,L1
+peut,p ,22,L1
+pareils,p ,14,L1
+pas,p ,13,L1
+tous,t,37,L1
+pas,p ,13,L1
+passer,p ,21,L1
+case,k,27,L2
+Penn,p ,25,L2
+Keanu,k,67,L2
+copping,k,43,L2
+koolaid,k,63,L2
+poor,p ,46,L2
+tongue,t,32,L2
+put,p ,24,L2
+person,p ,29,L2
+tears,t,55,L2
+caramel,k,50,L1_L2
+called,k,30,L1_L2
+can,k,29,L1_L2
+card,k,44,L1_L2
+catch,k,48,L1_L2
+pooping,p ,45,L1_L2
+poor,p ,65,L1_L2
+connery,k,30,L1_L2
+comedian,k,42,L1_L2
+tasteful,t,54,L1_L2

@@ -1,0 +1,41 @@
+word,phoneme,VOT,language
+condom,k,70,L1
+copping,k,42,L1
+passing,p ,76,L1
+kidney,k,50,L1
+poor,p ,79,L1
+to,t,21,L1
+temperpedic,t,74,L1
+touch,t,40,L1
+people,p ,13,L1
+type,t,37,L1
+pas,p ,9,L2
+pense,p ,13,L2
+pas ,p ,18,L2
+pas ,p ,11,L2
+pas ,p ,11,L2
+patate,p ,16,L2
+pecho,p ,10,L2
+pensais,p ,27,L2
+porter,p ,10,L2
+tout,t ,19,L2
+pas,p ,12,L1_L2
+parce que,p ,11,L1_L2
+pas,p ,9,L1_L2
+passe,p ,17,L1_L2
+pas ,p ,8,L1_L2
+peut,p ,12,L1_L2
+petillante,p ,6,L1_L2
+petillante,p ,18,L1_L2
+que,k,35,L1_L2
+tout,t,14,L1_L2
+Penn,p ,49,L2_L1
+taint,t ,65,L2_L1
+taint ,t ,67,L2_L1
+pets,p ,23,L2_L1
+pets ,p ,17,L2_L1
+Peut-etre,p ,31,L2_L1
+King,k ,51,L2_L1
+Tony,t ,49,L2_L1
+Park ,p ,59,L2_L1
+Parker ,p ,36,L2_L1
