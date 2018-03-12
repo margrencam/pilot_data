@@ -1,0 +1,132 @@
+word,phoneme,VOT,language,category,stress
+call,k,"56,88",L1_L2,content,yes
+peel,p ,"41,54",L1_L2,content,yes
+can,k,"26,57",L1_L2,content,yes
+can,k,"49,84",L1_L2,content,yes
+can,k,"43,52",L1_L2,content,yes
+care,k,"66,55",L1_L2,content,yes
+care,k,"59,33",L1_L2,content,yes
+catapults,k,"33,21",L1_L2,content,yes
+co,k,"60,15",L1_L2,function,yes
+company,k,"43,4",L1_L2,content,yes
+coming,k,"30,98",L1_L2,content,yes
+to,t,"70,71",L1_L2,function,yes
+connection,k,"36,3",L1_L2,content,no
+connecting,k,"27,26",L1_L2,content,no
+continues,k,"31,41",L1_L2,content,no
+continues,k,"28,13",L1_L2,content,no
+cooking,k,"41,08",L1_L2,content,yes
+corpses,k,"54,5",L1_L2,content,yes
+count,k,"98,33",L1_L2,name,yes
+cultural,k,"37,62",L1_L2,content,yes
+currency,k,"66,52",L1_L2,content,yes
+keg,k,"28,2",L1_L2,content,yes
+keg,k,"31,1",L1_L2,content,yes
+keg,k,"47,47",L1_L2,content,yes
+keg,k,"28,09",L1_L2,content,yes
+keg,k,"29,97",L1_L2,content,yes
+keg,k,"37,24",L1_L2,content,yes
+kid,k,"33,48",L1_L2,content,yes
+kill,k,"133,1",L1_L2,content,yes
+killed,k,"106,91",L1_L2,content,yes
+killed,k,"51,71",L1_L2,content,yes
+charisma,k,"61,11",L1_L2,content,no
+killed,k,"62,32",L1_L2,content,yes
+charisma,k,"55,89",L1_L2,content,no
+painting,p ,"18,94",L1_L2,content,yes
+to,t,"83,92",L1_L2,function,yes
+pal,p ,"22,06",L1_L2,content,yes
+pal,p ,"19,86",L1_L2,content,yes
+pal,p ,"17,05",L1_L2,content,yes
+parents,p ,"27,03",L1_L2,content,yes
+park,p ,"76,35",L1_L2,content,yes
+parting,p ,"31,9",L1_L2,content,yes
+puppies,p ,"11,36",L1_L2,content,yes
+cat ,k,"34,93",L1_L2,content,yes
+pee ,p ,"45,36",L1_L2,content,yes
+passable,p ,"41,66",L1_L2,content,yes
+passable,p ,"12,69",L1_L2,content,yes
+peel,p ,"75,93",L1_L2,content,yes
+peel,p ,"65,18",L1_L2,content,yes
+peel,p ,"41,58",L1_L2,content,yes
+peel,p ,"32,9",L1_L2,content,yes
+peel,p ,"67,04",L1_L2,content,yes
+peel,p ,"65,77",L1_L2,content,yes
+peel,p ,"32,61",L1_L2,content,yes
+peel,p ,"48,22",L1_L2,content,yes
+peel ,p ,"61,52",L1_L2,content,yes
+peel ,p ,"73,35",L1_L2,content,yes
+peel ,p ,"70,16",L1_L2,content,yes
+peel ,p ,"69,26",L1_L2,content,yes
+peel ,p ,"63,73",L1_L2,content,yes
+people,p ,"28,29",L1_L2,content,yes
+people,p ,"31,07",L1_L2,content,yes
+people,p ,"38,82",L1_L2,content,yes
+people,p ,"47,47",L1_L2,content,yes
+per,p ,"39,95",L1_L2,content,yes
+per,p ,"24,86",L1_L2,content,yes
+pick,p ,"19,06",L1_L2,content,yes
+pity,p ,"32,79",L1_L2,content,yes
+police,p ,"46,63",L1_L2,content,yes
+potter,p ,"24,19",L1_L2,name,yes
+power,p ,"38,47",L1_L2,content,yes
+power,p ,"18,55",L1_L2,content,yes
+power,p ,"16,37",L1_L2,content,yes
+power,p ,"16,53",L1_L2,content,yes
+pull,p ,"117,28",L1_L2,content,yes
+pull,p ,"87,36",L1_L2,content,yes
+people ,p ,"36,76",L1_L2,content,yes
+python,p ,"13,74",L1_L2,name,yes
+TSA,t ,"77,56",L1_L2,name,yes
+TSA,t ,"69,39",L1_L2,name,yes
+take,t,"35,66",L1_L2,content,yes
+take,t ,"48,52",L1_L2,content,yes
+takebacksies,t ,"37,9",L1_L2,content,no
+taking,t ,"28,39",L1_L2,content,yes
+candy,k,"69,8",L1_L2,content,yes
+tale,t ,"34,75",L1_L2,content,yes
+talking,t ,"18,06",L1_L2,content,yes
+tasteful,t ,"41,94",L1_L2,content,yes
+taxes,t ,"23,63",L1_L2,content,yes
+taxes,t,"12,37",L1_L2,content,yes
+taxes,t ,"30,2",L1_L2,content,yes
+tech,t ,"29,9",L1_L2,name,yes
+to,t ,"50,08",L1_L2,function,yes
+people ,p ,"36,49",L1_L2,content,yes
+tentacle,t ,"40,26",L1_L2,content,yes
+porn,p ,"55,2",L1_L2,content,yes
+tile,t ,"37,93",L1_L2,content,yes
+tile,t ,"17,12",L1_L2,content,yes
+tiles,t ,"28,41",L1_L2,content,yes
+tiles,t ,"36,65",L1_L2,content,yes
+tiles,t ,"38,82",L1_L2,content,yes
+tiles,t,"25,25",L1_L2,content,yes
+tiles,t ,"25,66",L1_L2,content,yes
+tiles,t ,"25,52",L1_L2,content,yes
+tiles,t ,"28,39",L1_L2,content,yes
+time,t ,"29,86",L1_L2,content,yes
+time,t ,"74,68",L1_L2,content,yes
+time,t ,"58,07",L1_L2,content,yes
+tale,t ,"44,16",L1_L2,content,yes
+time,t ,"18,98",L1_L2,content,yes
+puppies,p ,"63,65",L1_L2,content,yes
+tiny,t ,"26,44",L1_L2,content,yes
+tits,t ,"55,43",L1_L2,content,yes
+tits,t ,"65,02",L1_L2,content,yes
+to,t ,"56,41",L1_L2,function,yes
+to,t ,"53,03",L1_L2,function,yes
+to,t ,"61,95",L1_L2,function,yes
+to ,t ,"79,73",L1_L2,function,yes
+pile,p ,"42,36",L1_L2,content,yes
+toe,t ,"30,69",L1_L2,content,yes
+toes ,t ,"33,4",L1_L2,content,yes
+toga,t ,"72,11",L1_L2,content,yes
+toga,t ,"37,42",L1_L2,content,yes
+toga,t ,"82,87",L1_L2,content,yes
+toga,t ,"49,87",L1_L2,content,yes
+toga,t ,"36,58",L1_L2,content,yes
+ton,t ,"42,41",L1_L2,content,yes
+too ,t ,"135,94",L1_L2,content,yes
+top,t ,"23,45",L1_L2,content,yes
+tumor,t ,"70,83",L1_L2,content,yes
+turned,t ,"31,7",L1_L2,content,yes

@@ -1,0 +1,52 @@
+word,phoneme,VOT,language,category,stress
+KKK,k,"15,88",L1_L2,content,yes
+KKK,k,"31,66",L1_L2,content,yes
+TSA,t,"81,3",L1_L2,content,yes
+TSA,t,"58,63",L1_L2,content,yes
+camel,k,"39,97",L1_L2,content,yes
+terrorist,t,"41,62",L1_L2,content,yes
+tossing,t,"25,59",L1_L2,content,yes
+candlelit,k,"22,98",L1_L2,content,yes
+cards,k,"23,26",L1_L2,content,yes
+cards,k,"27,82",L1_L2,content,yes
+care,k,"62,66",L1_L2,content,yes
+coathanger,k,"44,55",L1_L2,content,yes
+coming,k,"29,57",L1_L2,content,yes
+to ,t,"24,05",L1_L2,function,yes
+commemorate,k,"41,45",L1_L2,content,no
+cage,k,"43,06",L1_L2,name,yes
+cookies,k,"66,59",L1_L2,content,yes
+cuddling,k,"41,24",L1_L2,content,yes
+curse,k,"37,27",L1_L2,content,yes
+keg,k,"23,88",L1_L2,content,yes
+keg,k,"32,08",L1_L2,content,yes
+pal,p ,"44,43",L1_L2,content,yes
+parents,p ,"15,62",L1_L2,content,yes
+peel,p ,"33,33",L1_L2,content,yes
+peel,p ,"18,53",L1_L2,content,yes
+peel,p ,"26,2",L1_L2,content,yes
+peel,p ,"68,98",L1_L2,content,yes
+peel,p ,"33,09",L1_L2,content,yes
+people,p ,"23,06",L1_L2,content,yes
+permanence,p ,"62,71",L1_L2,content,yes
+testicular,t,"33,93",L1_L2,content,no
+torsion,t,"31,29",L1_L2,content,yes
+picking,p ,"18,74",L1_L2,content,yes
+pie,p ,"77,7",L1_L2,content,yes
+pies,p ,"14,08",L1_L2,content,yes
+pity,p ,"18,99",L1_L2,content,yes
+kids,k,"49,45",L1_L2,content,yes
+porn,p ,"36,25",L1_L2,content,yes
+pornx,p ,"17,7",L1_L2,content,yes
+pouty,p ,"24,59",L1_L2,content,yes
+pull,p ,"29,02",L1_L2,content,yes
+talking,t,"51,49",L1_L2,content,yes
+taxes,t ,"47,85",L1_L2,content,yes
+time,t ,"19,14",L1_L2,content,yes
+time,t ,"40,74",L1_L2,content,yes
+people,p ,"39,06",L1_L2,content,yes
+tit,t ,"40,74",L1_L2,content,yes
+toe,t ,"35,5",L1_L2,content,yes
+toe,t ,"47,97",L1_L2,content,yes
+toga,t ,"41,18",L1_L2,content,yes
+too,t ,"64,09",L1_L2,content,yes
